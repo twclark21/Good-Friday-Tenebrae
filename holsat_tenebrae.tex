@@ -1,0 +1,369 @@
+%%Environment
+\documentclass[12pt, a5paper]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\usepackage{luatextra}
+\usepackage{fontspec}
+\usepackage[autocompile]{gregoriotex}
+\usepackage{gregoriosyms}
+\usepackage{lettrine}  		
+\usepackage{parallel}
+\usepackage{libertine}
+\usepackage{multicol}
+\usepackage[bf,,center]{titlesec}  %% select alternative section titiles
+\usepackage[pdftex]{geometry}%	
+\usepackage[british,latin]{babel}
+
+\pagestyle{plain}
+
+\setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
+
+%% Customisation
+
+\geometry{papersize={148mm,210mm}, inner=15mm, outer=05mm, top=10mm, bottom=12mm, twoside}
+
+\newlength{\colw} %% latin column
+\newlength{\colx} %% english column
+\newlength{\coly}
+\setlength{\colw}{0.43\textwidth}
+\setlength{\colx}{0.53\textwidth}
+\setlength{\coly}{5cm}   
+
+\def\ourCommentary#1{\noindent{{\fontshape{it}\fontsize{11}{11}\selectfont 
+%\color{ourRed}    %%%%%%  Comment out this line to remove red lines
+{\selectlanguage{british}#1}}}}
+
+\def\twoCols#1#2{
+\noindent\begin{minipage}[t]{\colw}\selectlanguage{latin}#1\strut\end{minipage}\gutter
+\noindent\begin{minipage}[t]{\colx}\selectlanguage{british}#2\strut\end{minipage}\\}
+
+\def\latinwithdropcap#1#2#3#4{
+\noindent\begin{minipage}[t]{\colw}
+\selectlanguage{latin}\lettrine[#1]{#2}{#3} #4\strut%\parfillskip=0em
+\end{minipage}\gutter
+}
+%This is english on the right
+\def\vernacularwithdropcap#1#2#3#4{
+\noindent\begin{minipage}[t]{\colx}
+\selectlanguage{british}\lettrine[#1]{#2}{#3} #4\strut%\parfillskip=0em
+\end{minipage}
+}
+
+\def\latin#1{%
+\selectlanguage{latin}
+\ParallelLText{#1\strut}%
+\selectlanguage{british}%
+\relax %
+}
+
+\def\vern#1{%
+\selectlanguage{british}
+\ParallelRText{#1\strut}%
+%\ParallelLText{\ \vspace*{1mm}}\ParallelRText{\ \vspace*{1mm}}%
+\ParallelPar %
+%\kern -1mm%
+\relax %
+}
+
+\titleformat{\subsection}{\filcenter\scshape\normalsize\bfseries}{}{1pt}
+{\newline}
+\titleformat*{\section}{\filcenter\scshape\large\bfseries}
+\titlespacing*{\subsection}{0pt}{3pt plus 1pt minus 1pt}{2pt plus 1pt minus 1pt}
+\titlespacing*{\section}{0pt}{2pt plus 1pt minus 1pt}{2pt plus 1pt minus 1pt}
+
+\setlength{\parskip}{0pt plus 1pt minus 1pt}
+%% Document
+
+\begin{document}
+	
+\section*{Holy Saturday Tenebr\ae}
+\subsection{First Nocturn }
+%%%  First Nocturn
+
+%\subsection{The First Nocturn}
+
+\input antiphons/inpace
+%%\bigskip
+
+\subsection{Psalm 4}
+
+\input psalms/psalm04
+
+%%\bigskip
+\input antiphons/inpace
+%%\bigskip
+\input antiphons/habitabit
+%%\bigskip
+%\vspace{-5mm}
+\subsection{Psalm 14}
+%\vspace{-5mm}
+\input psalms/psalm14
+
+%%\bigskip
+\input antiphons/habitabit
+\pagebreak
+\input antiphons/caromea
+
+%%\bigskip
+
+\subsection{Psalm 15}
+
+\input psalms/psalm15
+
+%%\bigskip
+
+\input antiphons/caromea
+
+%%\bigskip
+
+\input prayers/nocturn1
+
+%%%. Lessons
+
+\input lessons/lesson1
+
+\input lessons/lesson2
+
+\input lessons/lesson3
+
+\begin {center}\greseparator{5}{30}\end{center}
+%\vspace{-10mm}
+%%%% Second Nocturn
+%\pagebreak
+\subsection{The Second Nocturn}
+
+%%%\bigskip
+
+\input antiphons/elevamini
+
+%%\bigskip
+
+\subsection{Psalm 23}
+
+\input psalms/psalm23
+
+%%\bigskip
+
+\input antiphons/elevamini
+
+\pagebreak
+
+\input antiphons/credo
+
+%%\bigskip
+
+\subsection{Psalm 26}
+
+\input psalms/psalm26
+
+%%\bigskip
+\input antiphons/credo
+\pagebreak
+\input antiphons/domine
+
+%%\bigskip
+
+\subsection{Psalm 29}
+
+\input psalms/psalm29
+
+%%\bigskip
+
+\input antiphons/domine
+
+%%\bigskip
+
+\input prayers/nocturn2
+
+%%\bigskip
+
+%%%%. Lessons
+
+\input lessons/lesson4
+
+\input lessons/lesson5
+
+\input lessons/lesson6
+
+\begin {center}\greseparator{5}{30}\end{center}
+
+%%%% Third Nocturn
+%%%\bigskip
+\subsection{The Third Nocturn}
+
+%%%\bigskip
+
+\input antiphons/deus_adjuvat
+
+%%\bigskip
+
+\subsection{Psalm 53}
+
+\input psalms/psalm53
+
+%%\bigskip
+
+\input antiphons/deus_adjuvat
+
+%%\bigskip
+
+\input antiphons/inpacefactus
+
+%%\bigskip
+
+\subsection{Psalm 75}
+
+\input psalms/psalm75
+
+%%\bigskip
+
+\input antiphons/inpacefactus
+
+%%\bigskip
+
+\input antiphons/factus
+
+\subsection{Psalm 87}
+
+\input psalms/psalm87
+
+%%\bigskip
+
+\input antiphons/factus
+
+%%\bigskip
+
+%%%%. Lessons
+
+\input prayers/nocturn3
+
+%\newpage
+
+\input lessons/lesson7
+
+\input lessons/lesson8
+
+\input lessons/lesson9
+
+%%%\bigskip
+%\input prayers/endmatins
+
+\begin {center}\greseparator{5}{30}\end{center}
+
+\pagebreak
+
+%%%  Lauds
+
+\subsection{Lauds}
+
+%%\bigskip
+
+\input antiphons/omors
+
+\subsection{Psalm 50}
+
+\input psalms/psalm50
+
+%%\bigskip
+
+\input antiphons/omors
+
+%%\bigskip
+
+\input antiphons/plangent
+
+\subsection{Psalm 91}
+
+\input psalms/psalm91
+
+%%\bigskip
+
+\input antiphons/plangent
+
+%%\bigskip
+
+\input antiphons/attendite
+
+%\newpage
+%%\bigskip
+\subsection{Psalm 63}
+
+\input psalms/psalm63
+
+%%\bigskip
+
+\input antiphons/attendite
+
+%%\bigskip
+
+\input antiphons/aporta
+
+\subsection{Canticle of Ezechias}
+
+\input psalms/cant_ezechias
+
+%%\bigskip
+
+\input antiphons/aporta
+
+%%\bigskip
+
+\input antiphons/ovos
+
+\subsection{Psalm 150}
+
+\input psalms/psalm150
+
+%%\bigskip
+
+\input antiphons/ovos
+
+%%\bigskip
+
+\input prayers/capitulum
+
+%%%%. Benedictus
+
+%%\bigskip
+
+\input antiphons/mulieres
+
+\input psalms/benedictus
+
+%%\bigskip
+
+\input antiphons/mulieres
+
+\bigskip
+
+\ourCommentary{All the candles in the triangular candlestick, the Tenebrae Hearse, except that at the top, are extinguished one by one during the singing of the Psalms; whilst the Benedictus is being sung, the six candles on the altar are also extinguished one by one at every second verse, so that the last is put out during the last verse. In like manner, all the lamps and lights about the church are put out. When the last antiphon Mulieres is repeated, the remaining candle is taken from the top of the Hearse and hidden under the Epistle side of the altar. When the Antiphon has been repeated, all kneel and the following is sung:}
+
+\bigskip
+
+\input prayers/christus
+
+\bigskip
+
+\ourCommentary{The Pater Noster is said in silence, and then the following:}
+
+\bigskip
+
+\input prayers/concede
+
+\bigskip
+
+\ourCommentary{When the foregoing prayer has been said, a noise is made for a little while. This noise is symbolic of the earthquake which occurred at the time of Our Lord's Resurrection (Matt. 28:2).  Presently the lighted candle is brought from beneath the altar, placed back in its place on the Hearse and then extinguished.  All rise up and depart in silence.}
+
+\medskip
+
+%\begin {center}END OF TENEBRAE\end{center}
+
+\begin {center}\greseparator{1}{30}\end{center}
+
+
+
+
+
+	
+\end{document}
+
